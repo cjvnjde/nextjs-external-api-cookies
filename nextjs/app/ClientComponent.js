@@ -6,7 +6,9 @@ export function ClientComponent() {
   const [resp, setResp] = useState({});
 
   const onClick = () => {
-    fetch("http://localhost:3069/api/ping")
+    fetch("http://localhost:3069/api/ping", {
+      credentials: "include",
+    })
       .then((res) => res.json())
       .then((data) => {
         setResp(data);
